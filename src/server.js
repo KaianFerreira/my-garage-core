@@ -10,11 +10,13 @@ app.use(express.urlencoded({ extended: true }))
 
 // routes imported
 import brand from './routes/brand/route'
+import car from './routes/car/route'
 
 router.get('/ping', (req, res) => {
 	return res.send('pong')
 })
 
+router.use('/car', car)
 router.use('/brand', brand)
 
 const port = process.env.PORT || 3000

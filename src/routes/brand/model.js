@@ -20,10 +20,3 @@ export const create = async (name) => {
 	await disconnect()
 
 }
-export const getAllLinked = async () => {
-	await connect()
-
-	const brands = await Brand.find({}, { __v: 0 })
-	await disconnect()
-	return brands
-}
