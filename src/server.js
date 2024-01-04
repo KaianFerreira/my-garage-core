@@ -4,18 +4,22 @@ import { connectionTest } from './config/mongoose'
 const app = express()
 const router = express.Router()
 
-app.use('/', router)
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 
 // routes imported
-// import car from './routes/car/route'
+import brand from './routes/brand/route'
 
 router.get('/ping', (req, res) => {
 	return res.send('pong')
 })
 
-// router.use('/car', car)
+router.use('/brand', brand)
 
 const port = process.env.PORT || 3000
+
+app.use('/', router)
 
 app.listen(port, async () => { 
 	console.log(`Server listening on port ${ port }\n`)
