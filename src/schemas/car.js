@@ -10,5 +10,6 @@ export const car = new mongoose.Schema({
 	brand: { type: Types.ObjectId, ref: 'Brand' },
 	model: Types.String,
 	color: Types.String,
+	year: Types.Number,
 	specs: Types.String
 }, { collection: false })
