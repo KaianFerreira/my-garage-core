@@ -25,7 +25,6 @@ export async function connectionTest() {
 	console.log('Connecting to MongoDB')
 	await connect()
 	console.log('connection completed successfully\n')
-	mongoose.connection.close()
 	return true
 }
 
